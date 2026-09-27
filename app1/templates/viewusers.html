@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View User</title>
+</head>
+<body>
+    
+    {%  for user in users %}
+        <p> {{ user.username  }}  - {{ user.email }}</p>
+
+        {%  for a in user.addresses.all %}
+            <p> {{ a.city }} </p>
+        {% endfor %}
+
+    {% endfor %}
+    
+
+
+    <a href="/createuser">Create User</a>
+</body>
+</html>
